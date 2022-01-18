@@ -12,10 +12,11 @@ python3 -m venv env
 source env/bin/activate
 ```
 
-3. Install requirements:
+3. Install requirements: (do not forget to cd/scurlshort)
 ```
 pip install -r requirements.txt
 ```
+Do not 
 4. Make migrations and sync db model
 ```
 python manage.py makemigrations
