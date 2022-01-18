@@ -7,17 +7,17 @@ import random
 # Incorrect usage means the unsuccessful queries that were mandatory according to the document
 
 
-code_chars = (
+CODE_CHARS = (
             string.ascii_uppercase
             + string.ascii_lowercase
             + string.digits + "_")
 
-test_shortcode = random.sample(code_chars, 6)
+TEST_SHORTCODE = random.sample(code_chars, 6)
 
 CLIENT = RequestsClient()
 
 SERVER_ADDRESS = "http://127.0.0.1:8000/"
-URL_SHORTCODE = {"url": "https://www.example.com/", "shortcode": "".join(test_shortcode)}
+URL_SHORTCODE = {"url": "https://www.example.com/", "shortcode": "".join(TEST_SHORTCODE)}
 
 
 class ShortCodeCreation(APITestCase):
@@ -85,11 +85,11 @@ class StatTest(APITestCase):
         assert json_resp['created'] is not None, "Created should not be none!"
         assert json_resp['lastRedirect'] is not None, "lastRedirect should not be none!"
         assert json_resp['redirectCount'] is not None, "redirectCount should not be none!"
-        print("All shortcode redirect related tests passed regarding correct cases!")
+        print("All shortcode stats related tests passed regarding correct cases!")
         return True
 
     def test_incorrect(self):
         response = CLIENT.get(SERVER_ADDRESS + "asdasdasd" + "/stats/")
         assert response.status_code == 404, "Response code should be 404"
-        print("All shortcode redirect related tests passed regarding incorrect cases!")
+        print("All shortcode stats related tests passed regarding incorrect cases!")
         return True
