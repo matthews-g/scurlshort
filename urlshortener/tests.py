@@ -1,5 +1,4 @@
-from rest_framework.test import RequestsClient
-from abc import ABC, abstractmethod
+from rest_framework.test import RequestsClient, APITestCase
 import json
 import string
 import random
@@ -8,7 +7,7 @@ import random
 # Incorrect usage means the unsuccessful queries that were mandatory according to the document
 
 
-class TestBase(ABC):
+class TestBase(APITestCase):
 
     def __init__(self, client: RequestsClient, server_address: str, url_shortcode: dict):
         self.client = client
@@ -16,20 +15,18 @@ class TestBase(ABC):
         self.url = ""
         self.url_shortcode = url_shortcode  # For manual shortcode testing
 
-    @abstractmethod
-    def test_correct(self):
+    """def test_correct(self):
         response = self.client.post(self.url, data=self.url_shortcode)  # example
         # test the optimal usage
         pass
 
-    @abstractmethod
     def test_incorrect(self):
         # test incorrect usage
         pass
 
     def test_all(self):
         self.test_correct()
-        self.test_incorrect()
+        self.test_incorrect()"""
 
 
 class ShortenTest(TestBase):
