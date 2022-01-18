@@ -26,7 +26,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-6. WHILE THE SERVER IS RUNNING: Run tests
+6. WHILE THE SERVER IS RUNNING (use another terminal maybe): Run tests
 ``` 
 python manage.py test
 ```
