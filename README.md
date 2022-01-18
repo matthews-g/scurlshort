@@ -16,7 +16,6 @@ source env/bin/activate
 ```
 pip install -r requirements.txt
 ```
-Do not 
 4. Make migrations and sync db model
 ```
 python manage.py makemigrations
