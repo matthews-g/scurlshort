@@ -31,4 +31,4 @@ python manage.py runserver
 ``` 
 python manage.py test
 ```
-Don't forget to make sure the secondary terminal is in the same virtual environment by `source env/bin/activate`
+ Don't forget to make sure the secondary terminal is in the same virtual environment by `source env/bin/activate` while testing!
