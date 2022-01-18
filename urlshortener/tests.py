@@ -12,7 +12,7 @@ CODE_CHARS = (
             + string.ascii_lowercase
             + string.digits + "_")
 
-TEST_SHORTCODE = random.sample(code_chars, 6)
+TEST_SHORTCODE = random.sample(CODE_CHARS, 6)
 
 CLIENT = RequestsClient()
 
