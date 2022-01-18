@@ -27,7 +27,8 @@ python manage.py runserver
 ```
 
 6. WHILE THE SERVER IS RUNNING (use another terminal maybe): Run tests
+
 ``` 
 python manage.py test
 ```
-
+Don't forget to make sure the secondary terminal is in the same virtual environment by `source env/bin/activate`
