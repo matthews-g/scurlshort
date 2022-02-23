@@ -1,6 +1,15 @@
 # scurlshort
 
-Quick readme
+## URL shortener API created with Django REST API framework.
+This is a sample project I have made using Django REST API Framework. 
+
+# Requirements
+- [Requirements.txt](https://github.com/matthews-g/scurlshort/blob/main/requirements.txt)
+- [PostgreSQL](https://www.postgresql.org/download/)
+- [Database information must be configured here!](https://github.com/matthews-g/scurlshort/blob/main/.idea/database_config.env)
+
+# Easy setup!
+0. Install PostgreSQL, create the database, and edit database_config.env
 
 1. Clone repo:
 ```
@@ -32,3 +41,15 @@ python manage.py runserver
 python manage.py test
 ```
  Don't forget to make sure the secondary terminal is in the same virtual environment by `source env/bin/activate` while testing!
+ 
+# API endpoints
+
+| Method  | Endpoint | Example usage | Description
+| ------------- | ------------- | ------------- | ------------- |
+| POST  | /shorten/ | http://127.0.0.1:8000/shorten/ | Make sure to include "url" parameter in the body. "shortcode" parameter is optional if you want custom shortcode!
+| GET  | /\<shortcode>/  | http://127.0.0.1:8000/iFxlBj/ | This request will redirect to the shorted URL.
+| GET | /\<shortcode>/stats | http://127.0.0.1:8000/iFxlBj/stats | Get the creation date, last redirect date, redirect count data of the given shortcode.
+
+
+
+
