@@ -6,7 +6,7 @@ This is a sample project I have made using Django REST API Framework.
 # Requirements
 - [Requirements.txt](https://github.com/matthews-g/scurlshort/blob/main/requirements.txt)
 - [PostgreSQL](https://www.postgresql.org/download/)
-- [Database information must be configured here (secret key must be left alone)!](https://github.com/matthews-g/scurlshort/blob/main/.idea/database_config.env)
+- [Database information must be configured here!](https://github.com/matthews-g/scurlshort/blob/main/.idea/database_config.env)
 
 # Easy setup!
 0. Install PostgreSQL, create the database, and edit database_config.env
