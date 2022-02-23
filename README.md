@@ -1,5 +1,5 @@
 # ScURLShort
-URL shortener API created with Django REST API framework.
+URL shortener API created with Django REST framework.
 
 
 # Requirements
