@@ -7,7 +7,7 @@ from urlshortener.serializers import ShortUrlSerializer
 
 
 class ShortenUrl(APIView):
-    """Shorten a URL."""
+    """ Shorten a URL. """
 
     def post(self, request, format=None):
 
@@ -24,7 +24,7 @@ class ShortenUrl(APIView):
         try:
             ShortUrlModel.objects.get(shortcode=data['shortcode'])
             return Response({'error': 'Shortcode already in use'}, 409)
-        except:
+        except ObjectDoesNotExist:
             pass
 
         # Check if the shortcode is satisfying the given rules...
@@ -38,7 +38,7 @@ class ShortenUrl(APIView):
 
 
 class GetCodeStats(APIView):
-    """View the statistics of the shortened code"""
+    """ View the statistics of the shortened code """
 
     def get(self, request, short_code: str, format=None):
 

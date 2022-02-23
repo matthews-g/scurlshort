@@ -1,4 +1,4 @@
-from rest_framework.test import RequestsClient, APITestCase
+from rest_framework.test import RequestsClient, APITestCase, APILiveServerTestCase
 import json
 import string
 import random
@@ -20,7 +20,7 @@ SERVER_ADDRESS = "http://127.0.0.1:8000/"
 URL_SHORTCODE = {"url": "https://www.example.com/", "shortcode": "".join(TEST_SHORTCODE)}
 
 
-class ShortCodeCreation(APITestCase):
+class ShortCodeCreation(APILiveServerTestCase):
 
     def test_correct(self):
         # Automatic shortcode
@@ -57,7 +57,7 @@ class ShortCodeCreation(APITestCase):
         print("All shortening related tests passed regarding incorrect cases!")
         return True
 
-class ShortCodeTest(APITestCase):
+class ShortCodeTest(APILiveServerTestCase):
 
     def test_correct(self):
         response = CLIENT.post(SERVER_ADDRESS + "shorten/", data={"url": "https://www.example.com/",
@@ -74,7 +74,7 @@ class ShortCodeTest(APITestCase):
         return True
 
 
-class StatTest(APITestCase):
+class StatTest(APILiveServerTestCase):
 
     def test_correct(self):
         response = CLIENT.post(SERVER_ADDRESS + "shorten/", data={"url": "https://www.example.com/",
